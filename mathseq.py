@@ -1,36 +1,42 @@
 
 
 
-def fibonacci(limits):
-	x , y , r , i = 0 ,1 ,0 ,1
-	emp = [0]
-	while i < limits:
-		r = x+y
-		x = y
-		y = r
-		emp.append(r)
-		i += 1
-	return emp
+for num in range(start,end, + 1):
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)
 
 
-def odd_seq(self,limits):
-	self.limits = limits
-	emp = []
-	i = 1
-	while i <= self.limits:
-		emp.append(i)
-		i += 2
-	return 
-	
-def even_seq(self,limits):
-	self.limits = limits
-	emp = []
-	i = 0
-	while i <= self.limits:
-		emp.append(i)
-		i += 2
-	return 
-	
+
+
+class Sequences:
+	def __init__(self,limit):
+		self.limit = limit
+
+	def fibonacci(self):
+		x , y , r  = 0 ,1 ,0
+		while True:
+			#r = x+y
+			x = y
+			y = x+y
+			yield x
+
+	def odd_seq(self):
+		n = 1
+		while True:
+			yield n
+			n+=2
+
+
+	def even_seq(self):
+		n = 1
+		while True:
+			yield n
+			n+=2
+
 
 
 class types():

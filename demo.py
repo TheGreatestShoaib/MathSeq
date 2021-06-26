@@ -1,44 +1,25 @@
-from mathseq import fibonacci , list_prop
+from mathseq import Sequences , list_prop ,types
 import sys
 
-fib = fibonacci(100)
 
-h = list_prop(fib)
-
-haha = h.summaker()
-print(haha)
-
-"""
-t = types()
-
-l = list_prop(seq)
-fib = list_prop(fibonacci)
-odd_listed = l.check_odds()
-#fibonacci_listed = fib.check_odds()
-print(odd_listed)
-
-	
-
-"""
+type = types()
 
 
+fib = Sequences(10)
+fib2 = fib.fibonacci()
+even = fib.even_seq()
+odd = fib.odd_seq()
 
+odd_list = []
 
+for _ in range(10):
+	odd_list.append(next(odd))
 
+print(odd_list)
 
-print("""
-
-
-	""")
-#print(fibonacci)
-#print(fibonacci_listed)
-
-
-
-
-
-
-
+for i in odd_list:
+	if type.is_prime(i):
+		print(i)
 
 
 
