@@ -6,20 +6,19 @@ type = types()
 
 
 fib = Sequences(10)
-fib2 = fib.fibonacci()
-even = fib.even_seq()
-odd = fib.odd_seq()
+
+
+g = fib.prime_generator(1000)       # give firt 1000 prime numbers
+
+
 
 odd_list = []
 
 for _ in range(10):
-	odd_list.append(next(odd))
+	odd_list.append(next(g))
 
 print(odd_list)
 
-for i in odd_list:
-	if type.is_prime(i):
-		print(i)
 
 
 

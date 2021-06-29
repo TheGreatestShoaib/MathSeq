@@ -1,6 +1,6 @@
 
 
-
+"""
 for num in range(start,end, + 1):
    if num > 1:
        for i in range(2, num):
@@ -8,7 +8,7 @@ for num in range(start,end, + 1):
                break
        else:
            print(num)
-
+"""
 
 
 
@@ -16,13 +16,15 @@ class Sequences:
 	def __init__(self,limit):
 		self.limit = limit
 
-	def fibonacci(self):
-		x , y , r  = 0 ,1 ,0
-		while True:
-			#r = x+y
-			x = y
-			y = x+y
-			yield x
+
+		# Prime number generator
+	def prime_generator(self,end):
+	    for n in range(2,end):     
+	        for x in range(2, n):
+	            if n % x == 0:
+	                break
+	        else:
+	            yield n
 
 	def odd_seq(self):
 		n = 1
@@ -36,6 +38,15 @@ class Sequences:
 		while True:
 			yield n
 			n+=2
+
+
+	def fibonacci(self):
+		x , y , r  = 0 ,1 ,0
+		while True:
+			x = y
+			y = x+y
+			yield x
+
 
 
 
