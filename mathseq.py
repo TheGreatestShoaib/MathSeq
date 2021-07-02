@@ -1,17 +1,4 @@
 
-
-"""
-for num in range(start,end, + 1):
-   if num > 1:
-       for i in range(2, num):
-           if (num % i) == 0:
-               break
-       else:
-           print(num)
-"""
-
-
-
 class Sequences:
 	def __init__(self,limit):
 		self.limit = limit
@@ -26,18 +13,32 @@ class Sequences:
 	        else:
 	            yield n
 
-	def odd_seq(self):
-		n = 1
-		while True:
-			yield n
-			n+=2
+	def odd_seq(self,inverse=False):
+		if inverse == False:
+				n = 1
+				while True:
+					yield n
+					n+=2
+		elif inverse == True:
+			n = -1
+			while True:
+				yield n
+				n-=2
+		else:
+			raise ValueError(f"odd_seq Sequence Doesn't Contain value \"{inverse}\"")
 
-
-	def even_seq(self):
-		n = 1
-		while True:
-			yield n
-			n+=2
+	def even_seq(self,inverse=False):
+		n = 0
+		if inverse == False:
+				while True:
+					yield n
+					n+=2
+		elif inverse == True:
+			while True:
+				yield n
+				n-=2
+		else:
+			raise ValueError(f"even_seq Sequence Doesn't Contain value \"{inverse}\"")
 
 
 	def fibonacci(self):
@@ -46,6 +47,20 @@ class Sequences:
 			x = y
 			y = x+y
 			yield x
+
+	def xibonacci(self,x):
+		inp = int(x)
+		emp = []
+		for i in range(inp-1):
+			emp.append(0)
+		emp.append(1)
+		while True:
+			x = emp[-inp:]
+			emp = emp[-inp:]
+			y = sum(emp)
+			yield emp[-1]
+			emp.append(y)
+
 
 
 
@@ -85,6 +100,11 @@ class types():
 class list_prop(types):
 	def __init__(self,lists):
 		self.lists = lists
+		if type(lists) == list:
+			print("bal")
+		else:
+			raise TypeError("Only List Objects Are Iterable")
+
 
 	def sub_list(self,n):
 		l = self.lists

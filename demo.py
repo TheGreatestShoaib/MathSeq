@@ -6,20 +6,17 @@ type = types()
 
 
 fib = Sequences(10)
-
-
-g = fib.prime_generator(1000)       # give firt 1000 prime numbers
-
-
-
+g = fib.even_seq(inverse="True")      # give firt 1000 prime number
 odd_list = []
 
 for _ in range(10):
 	odd_list.append(next(g))
 
+
+
 print(odd_list)
 
-
+#hello = list_prop("odd_list")
 
 
 
