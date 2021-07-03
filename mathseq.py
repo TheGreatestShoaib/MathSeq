@@ -48,12 +48,15 @@ class Sequences:
 			y = x+y
 			yield x
 
-	def xibonacci(self,x):
+	def xibonacci(self,x,inverse=False):
 		inp = int(x)
 		emp = []
 		for i in range(inp-1):
 			emp.append(0)
-		emp.append(1)
+		if inverse == False:
+			emp.append(1)
+		else:
+			emp.append(-1)
 		while True:
 			x = emp[-inp:]
 			emp = emp[-inp:]
