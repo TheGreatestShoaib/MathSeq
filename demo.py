@@ -6,7 +6,7 @@ type = types()
 
 
 fib = Sequences(10)
-g = fib.xibonacci(3)      # give firt 1000 prime number
+g = fib.prime_generator(100)   # give firt 1000 prime number
 odd_list = []
 
 for _ in range(10):

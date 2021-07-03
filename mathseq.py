@@ -5,6 +5,15 @@ class Sequences:
 
 
 		# Prime number generator
+	def composite_generator(self,end):
+	    for n in range(2,end):     
+	        for x in range(2, n):
+	            if n % x == 0:
+	                yield n
+	                break
+	        else:
+	            pass
+
 	def prime_generator(self,end):
 	    for n in range(2,end):     
 	        for x in range(2, n):
