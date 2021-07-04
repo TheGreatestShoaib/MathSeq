@@ -21,6 +21,20 @@ class Sequences:
 	                break
 	        else:
 	            yield n
+	
+
+	def vaneck():
+		stored = [0]
+		while True:
+			sublist = stored[:-1][::-1]
+			if stored[-1] not in sublist:
+				stored.append(0)
+			else:
+				indexed = sublist.index(stored[-1])
+				print
+				stored.append(indexed+1)
+			yield stored[-1]
+		
 
 	def odd_seq(self,inverse=False):
 		if inverse == False:
@@ -72,6 +86,8 @@ class Sequences:
 			y = sum(emp)
 			yield emp[-1]
 			emp.append(y)
+	
+
 
 
 
