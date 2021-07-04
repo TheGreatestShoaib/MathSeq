@@ -1,29 +1,42 @@
+'''
+Mathseq is a basic library prototype that helps you make infinite sequence and see the mystery 
+behind it in different ways
+
+'''
+
+__all__=["Sequences","types","listProp"]
 
 class Sequences:
+	''' A class of 10 sequences that infinitely generate sequences ..'''
 	def __init__(self,limit):
 		self.limit = limit
 
-
-		# Prime number generator
 	def composite_generator(self,end):
-	    for n in range(2,end):     
-	        for x in range(2, n):
-	            if n % x == 0:
-	                yield n
-	                break
-	        else:
-	            pass
+		''' -It generates composite numbers which are just opposite of prime numbers,, it means real numbers that
+			-aren't a prime number is a composite number
+			
+			-The way of Generate composite numbers is looping through desired range and check the number
+			-is either devidable by something not 1 or the number itself or not,if it is then the number is composite. '''
+		n = 2
+		while n > 0:
+			for x in range(2, n):
+				if n % x == 0:
+					yield n
+					break
+				else:
+					pass
+			n+=1
 
 	def prime_generator(self,end):
-	    for n in range(2,end):     
+	    for n in range(2,end):
 	        for x in range(2, n):
 	            if n % x == 0:
 	                break
-	        else:
-	            yield n
-	
+	            else:
+	            	yield n
 
-	def vaneck():
+	
+	def vaneck(self):
 		stored = [0]
 		while True:
 			sublist = stored[:-1][::-1]
@@ -88,12 +101,7 @@ class Sequences:
 			emp.append(y)
 	
 
-
-
-
-
-
-class types():
+class types:
 	def __init__(self):
 		pass
 
@@ -125,7 +133,7 @@ class types():
 			return True
 
 
-class list_prop(types):
+class listProp(types):
 	def __init__(self,lists):
 		self.lists = lists
 		if type(lists) == list:
@@ -149,6 +157,4 @@ class list_prop(types):
 		else:
 			lists = self.lists
 			return sum(self.lists)
-
-
 

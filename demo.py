@@ -1,4 +1,4 @@
-from mathseq import Sequences , list_prop ,types
+from mathseq import *
 import sys
 
 
@@ -6,10 +6,10 @@ type = types()
 
 
 fib = Sequences(10)
-g = fib.prime_generator(100)   # give firt 1000 prime number
+g = fib.prime_generator(1000)   # give firt 1000 prime number
 odd_list = []
 
-for _ in range(10):
+for _ in range(100):
 	odd_list.append(next(g))
 
 
