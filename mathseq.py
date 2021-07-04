@@ -37,6 +37,7 @@ class Sequences:
 
 	
 	def vaneck(self):
+		''' Vaneck's sequence generates numbers in a unique way .. it checks  '''
 		stored = [0]
 		while True:
 			sublist = stored[:-1][::-1]
@@ -50,6 +51,7 @@ class Sequences:
 		
 
 	def odd_seq(self,inverse=False):
+		''' This is a simple function that generates odd sequence of either positive in infinite or negative '''
 		if inverse == False:
 				n = 1
 				while True:
@@ -78,13 +80,36 @@ class Sequences:
 
 
 	def fibonacci(self):
-		x , y , r  = 0 ,1 ,0
+		''' Fibonacci is really a mysterious sequence 
+
+			following this simple logic of "fn = fn-1 + fn-2 " fibonacci is generated.
+				x y r
+				0 1 1
+				1 1 2
+				2 1 3
+				3 2 5
+				5 3 2
+
+			This is just a simple visualization of fibonacci number
+
+		'''
+
+		x , y  = 0 ,1
 		while True:
 			x = y
 			y = x+y
 			yield x
 
 	def xibonacci(self,x,inverse=False):
+		''' X-ibonacci has no existance in real life. this is a basic function that generates different sequence
+			That follows the simple law of f = f(n.-n) 
+			It generates :
+				- fibonacci
+				- tribonacci
+				- tetrabonacci
+				- hexabonacci
+
+		 '''
 		inp = int(x)
 		emp = []
 		for i in range(inp-1):
