@@ -2,24 +2,31 @@ from mathseq import *
 import sys
 
 
-type = types()
+type = Types()
 
 
 fib = Sequences(10)
-g = fib.VanEck_seq()   # give firt 1000 prime number
+g = fib.xibonacci(4,inverse="True")   # give firt 1000 prime number
 odd_list = []
 
 
-for _ in range(10):
+for _ in range(100):
 	#odd_list.append(next(g))
-	print(next(g))
+	odd_list.append(next(g))
 
 
 print(odd_list)
 
 #hello = list_prop("odd_list")
+'''
 
+for i in odd_list:
+	print(type.is_odd(i))
+	print(type.is_prime(i))
+	print(type.is_even(i))
+	print()
 
+'''
 
 
 

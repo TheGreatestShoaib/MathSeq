@@ -1,3 +1,5 @@
+import math
+
 
 #Sequence Class : 
 
@@ -34,15 +36,13 @@
 #
 
 
-
-
 '''
 Mathseq is a basic library prototype that helps you make infinite sequence and see the mystery 
 behind it in different ways
 
 '''
 
-__all__=["Sequences","types","listProp"]
+__all__=["Sequences","Types","listProp"]
 
 class Sequences:
 	''' A class of 10 sequences that infinitely generate sequences ..'''
@@ -71,7 +71,7 @@ class Sequences:
 
 			-A Prime number can only devided by the number itself and 1 .
 
-			- The largest known prime number (as of December 2020) is 282,589,933 − 1 And It basically started from 2.
+			-The largest known prime number (as of December 2020) is 282,589,933 − 1 And It basically started from 2.
 			
 		'''
 
@@ -100,32 +100,30 @@ class Sequences:
 
 	def odd_seq(self,inverse=False):
 		''' This is a simple function that generates odd sequence of either positive in infinite or negative '''
-		if inverse == False:
+		if inverse is False:
 				n = 1
 				while True:
 					yield n
 					n+=2
-		elif inverse == True:
+		else:
 			n = -1
 			while True:
 				yield n
 				n-=2
-		else:
-			raise ValueError(f"odd_seq Sequence Doesn't Contain value \"{inverse}\"")
+
 
 	def even_seq(self,inverse=False):
 		''' -even_seq generates infinite sequence of even number by following simple formula of "n+2" '''
 		n = 0
-		if inverse == False:
+		if inverse is False:
 				while True:
 					yield n
 					n+=2
-		elif inverse == True:
+		else:
 			while True:
 				yield n
 				n-=2
-		else:
-			raise ValueError(f"even_seq Sequence Doesn't Contain value \"{inverse}\"")
+
 
 
 	def fibonacci(self):
@@ -165,7 +163,7 @@ class Sequences:
 		emp = []
 		for i in range(inp-1):
 			emp.append(0)
-		if inverse == False:
+		if inverse is False:
 			emp.append(1)
 		else:
 			emp.append(-1)
@@ -180,68 +178,72 @@ class Sequences:
 		''' -This Algorithm was taked from OEIS and the author is Ehsan Kia.. 
 
 		 '''
-		print("bal")
-		if inverse == False:
+		if inverse is False:
 			try:
-				A181391 = [0]
+				list_vanseq = [0]
 				last_pos = {}
 				i = 0
 				while True:
-					new_value = i - last_pos.get(A181391[i], i)
-					A181391.append(new_value)
-					last_pos[A181391[i]] = i
-					#print(last_pos[A181391])
+					new_value = i - last_pos.get(list_vanseq[i], i)
+					list_vanseq.append(new_value)
+					last_pos[list_vanseq[i]] = i
+					#print(last_pos[list_vanseq])
 					yield new_value
 					i += 1
-			except Exception as e:
-				print(e)
-		elif inverse == True:
-			A181391 = [0]
+			except Exception as error:
+				print(error)
+		else:
+			list_vanseq = [0]
 			last_pos = {}
 			i = 0
 			while True:
-				new_value = -abs(i - last_pos.get(A181391[i], i))
-				A181391.append(new_value)
-				last_pos[A181391[i]] = i
-				yield A181391[-1]
+				new_value = -abs(i - last_pos.get(list_vanseq[i], i))
+				list_vanseq.append(new_value)
+				last_pos[list_vanseq[i]] = i
+				yield list_vanseq[-1]
 				i += 1
 
 		return "hello"
 
 
-class types:
+class Types:
+	''' types return either True or False based on its functionality '''
 	def __init__(self):
 		pass
 
 	def is_odd(self,chac):
-		self.chac = chac
+		''' hello '''
 		if chac % 2 != 0:
 			return True
-		else:
+		else: #pylint: disable=no-else-return
 			return False
 
 	def is_even(self,chac):
-		self.chac = chac
+		''' haha '''
 		if chac % 2 != 0:
 			return False
-		else:
+		else:	#pylint: disable=no-else-return
 			return True
 
 	def is_prime(self,chac):
-		self.chac = chac
+		''' will add later '''
 		is_prime = False
-		if self.chac > 1:
-			for i in range(2,self.chac):
-				if (self.chac % i) == 0:
+		if chac > 1:
+			for i in range(2,chac):
+				if (chac % i) == 0:
 					is_prime = True
 					break
 		if is_prime:
 			return False
-		else:
+		else:	#pylint: disable=no-else-return
 			return True
 
 
-class listProp(types):
+class listProp(Types):
+	''' -listProp Maintain A Balance Between Lists. It Manipulates Them .
+		- It has Basic Properties of Doing Sum , Shaping a List 
+
+	'''
 	def __init__(self,lists):
 		self.lists = lists
 		if type(lists) == list:
@@ -250,17 +252,22 @@ class listProp(types):
 			raise TypeError("Only List Objects Are Iterable")
 
 
-	def sub_list(self,n):
-		l = self.lists
-		x = [l[i:i + n] for i in range(0, len(l), n)] 
-		return x
+	def Sublist(self,shape):
+		''' This is doc '''
+		
+		mainlist = self.lists
+		shappedlist = [mainlist[i:i + shape ] for i in range(0, len(mainlist),shape )] 
+		return shappedlist
 
-	def summaker(self,devide=None,prime_state=None,even_state=None,odd_state=None):
+	def summaker(self,devide=None,prime_state=None,even_state=None,odd_state=None): #pylint : disable=unused-argument
+		
+		''' Man this is Annoying '''
+
 		if devide is not None:
-			lists = self.sub_list(devide)
+			lists = self.Sublist(devide)
 			emp = []
-			for l in lists:
-				emp.append(sum(l))
+			for lst in lists:
+				emp.append(sum(lst))
 			return emp
 		else:
 			lists = self.lists
