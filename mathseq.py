@@ -1,3 +1,41 @@
+
+#Sequence Class : 
+
+# even sequence
+# odd sequence
+# composite sequence
+# prime sequence
+# VanEck sequence
+# Look and say sequence   --Have to DO
+# fibonacci sequence
+# xibonacci sequence generator
+# Random Sequence  		--Have to DO
+#
+#
+
+#Pattern Class: --Have to DO
+
+# Generate Continious Pattern 
+# Recognize Patterns
+
+#list_prop
+
+# Devide list into sublist
+# sum lists
+# manipulate lists 		--Have to DO
+#
+#
+
+
+#type class:
+
+#get types either prime or nor , odd or even etc
+#
+#
+
+
+
+
 '''
 Mathseq is a basic library prototype that helps you make infinite sequence and see the mystery 
 behind it in different ways
