@@ -28,6 +28,12 @@ class Sequences:
 			n+=1
 
 	def prime_generator(self,end):
+		''' -Prime numbers are considered as the most exciting numbers among the math lovers..
+
+			-A Prime number can only devided by the number itself and 1 .
+
+			- The largest known prime number (as of December 2020) is 282,589,933 − 1 And It basically started from 2.
+			'''
 	    for n in range(2,end):
 	        for x in range(2, n):
 	            if n % x == 0:
@@ -38,6 +44,7 @@ class Sequences:
 	
 	def vaneck(self):
 		''' Vaneck's sequence generates numbers in a unique way .. it checks  '''
+
 		stored = [0]
 		while True:
 			sublist = stored[:-1][::-1]
@@ -66,6 +73,7 @@ class Sequences:
 			raise ValueError(f"odd_seq Sequence Doesn't Contain value \"{inverse}\"")
 
 	def even_seq(self,inverse=False):
+		''' -even_seq generates infinite sequence of even number by following simple formula of "n+2" '''
 		n = 0
 		if inverse == False:
 				while True:
@@ -80,10 +88,12 @@ class Sequences:
 
 
 	def fibonacci(self):
-		''' Fibonacci is really a mysterious sequence 
+		''' - Fibonacci is really a mysterious sequence !
 
-			following this simple logic of "fn = fn-1 + fn-2 " fibonacci is generated.
+			- Following this simple logic of "fn = fn-1 + fn-2 " fibonacci is generated.
+				
 				x y r
+				-----
 				0 1 1
 				1 1 2
 				2 1 3
