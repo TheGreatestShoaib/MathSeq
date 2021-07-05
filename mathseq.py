@@ -28,18 +28,21 @@ class Sequences:
 			n+=1
 
 	def prime_generator(self,end):
+
 		''' -Prime numbers are considered as the most exciting numbers among the math lovers..
 
 			-A Prime number can only devided by the number itself and 1 .
 
 			- The largest known prime number (as of December 2020) is 282,589,933 − 1 And It basically started from 2.
-			'''
-	    for n in range(2,end):
-	        for x in range(2, n):
-	            if n % x == 0:
-	                break
-	            else:
-	            	yield n
+			
+		'''
+
+		for n in range(2,end):
+			for x in range(2, n):
+				if n % x == 0:
+					break
+				else:
+					yield n
 
 	
 	def vaneck(self):
@@ -135,6 +138,38 @@ class Sequences:
 			yield emp[-1]
 			emp.append(y)
 	
+	def VanEck_seq(self,inverse=False):
+		''' -This Algorithm was taked from OEIS and the author is Ehsan Kia.. 
+
+		 '''
+		print("bal")
+		if inverse == False:
+			try:
+				A181391 = [0]
+				last_pos = {}
+				i = 0
+				while True:
+					new_value = i - last_pos.get(A181391[i], i)
+					A181391.append(new_value)
+					last_pos[A181391[i]] = i
+					#print(last_pos[A181391])
+					yield new_value
+					i += 1
+			except Exception as e:
+				print(e)
+		elif inverse == True:
+			A181391 = [0]
+			last_pos = {}
+			i = 0
+			while True:
+				new_value = -abs(i - last_pos.get(A181391[i], i))
+				A181391.append(new_value)
+				last_pos[A181391[i]] = i
+				yield A181391[-1]
+				i += 1
+
+		return "hello"
+
 
 class types:
 	def __init__(self):
