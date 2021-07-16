@@ -5,8 +5,8 @@ import sys
 type = Types()
 
 
-fib = Sequences(10)
-g = fib.xibonacci(4,inverse="True")   # give firt 1000 prime number
+fib = Sequences()
+g = fib.composite_generator()   # give firt 1000 prime number
 odd_list = []
 
 

@@ -1,69 +1,45 @@
-import math
 
+'''
+#Look and say sequence   --Have to DO
 
-#Sequence Class : 
-
-# even sequence
-# odd sequence
-# composite sequence
-# prime sequence
-# VanEck sequence
-# Look and say sequence   --Have to DO
-# fibonacci sequence
-# xibonacci sequence generator
-# Random Sequence  		--Have to DO
-#
-#
+#Random Sequence  		--Have to DO
 
 #Pattern Class: --Have to DO
 
-# Generate Continious Pattern 
-# Recognize Patterns
+#manipulate lists 		--Have to DO
 
-#list_prop
-
-# Devide list into sublist
-# sum lists
-# manipulate lists 		--Have to DO
-#
-#
-
-
-#type class:
-
-#get types either prime or nor , odd or even etc
-#
-#
-
-
-'''
 Mathseq is a basic library prototype that helps you make infinite sequence and see the mystery 
-behind it in different ways
+behind it in different ways '''
 
-'''
+import math
 
-__all__=["Sequences","Types","listProp"]
+used_math = math.sqrt(16)
+
+__all__=["Sequences","Listprop"]
+DEFINE = ''' Hello '''
 
 class Sequences:
 	''' A class of 10 sequences that infinitely generate sequences ..'''
-	def __init__(self,limit):
-		self.limit = limit
+	def __init__(self,inverse=False):
+		self.inverse = inverse
 
-	def composite_generator(self,end):
-		''' -It generates composite numbers which are just opposite of prime numbers,, it means real numbers that
+
+	def composite_generator(self):
+		''' -It generates composite numbers which are just opposite of prime numbers,,
+			-it means real numbers that
 			-aren't a prime number is a composite number
 			
-			-The way of Generate composite numbers is looping through desired range and check the number
-			-is either devidable by something not 1 or the number itself or not,if it is then the number is composite. '''
+			-The way of Generate composite numbers is looping through desired range
+			-And check the number is either devidable by something not 1 
+			-or the number itself or not,if it is then the number is composite. '''
 		n = 2
 		while n > 0:
 			for x in range(2, n):
 				if n % x == 0:
 					yield n
 					break
-				else:
-					pass
 			n+=1
+
 
 	def prime_generator(self,end):
 
@@ -71,35 +47,22 @@ class Sequences:
 
 			-A Prime number can only devided by the number itself and 1 .
 
-			-The largest known prime number (as of December 2020) is 282,589,933 − 1 And It basically started from 2.
+			
 			
 		'''
 
 		for n in range(2,end):
 			for x in range(2, n):
 				if n % x == 0:
-					break
+					pass
 				else:
 					yield n
 
-	
-	def vaneck(self):
-		''' Vaneck's sequence generates numbers in a unique way .. it checks  '''
 
-		stored = [0]
-		while True:
-			sublist = stored[:-1][::-1]
-			if stored[-1] not in sublist:
-				stored.append(0)
-			else:
-				indexed = sublist.index(stored[-1])
-				print
-				stored.append(indexed+1)
-			yield stored[-1]
-		
 
 	def odd_seq(self,inverse=False):
-		''' This is a simple function that generates odd sequence of either positive in infinite or negative '''
+		''' This is a simple function that generates odd sequence of either 
+		    positive in infinite or negative '''
 		if inverse is False:
 				n = 1
 				while True:
@@ -125,7 +88,6 @@ class Sequences:
 				n-=2
 
 
-
 	def fibonacci(self):
 		''' - Fibonacci is really a mysterious sequence !
 
@@ -149,9 +111,10 @@ class Sequences:
 			y = x+y
 			yield x
 
+
 	def xibonacci(self,x,inverse=False):
-		''' X-ibonacci has no existance in real life. this is a basic function that generates different sequence
-			That follows the simple law of f = f(n.-n) 
+		''' X-ibonacci has no existance in real life. this is a basic function
+			That generates different sequence That follows the simple law of f = f(n.-n) 
 			It generates :
 				- fibonacci
 				- tribonacci
@@ -161,7 +124,7 @@ class Sequences:
 		 '''
 		inp = int(x)
 		emp = []
-		for i in range(inp-1):
+		for _ in range(inp-1):
 			emp.append(0)
 		if inverse is False:
 			emp.append(1)
@@ -173,8 +136,9 @@ class Sequences:
 			y = sum(emp)
 			yield emp[-1]
 			emp.append(y)
-	
-	def VanEck_seq(self,inverse=False):
+
+
+	def vaneck_seq(self,inverse=False):
 		''' -This Algorithm was taked from OEIS and the author is Ehsan Kia.. 
 
 		 '''
@@ -190,8 +154,8 @@ class Sequences:
 					#print(last_pos[list_vanseq])
 					yield new_value
 					i += 1
-			except Exception as error:
-				print(error)
+			except:
+				print("hel")
 		else:
 			list_vanseq = [0]
 			last_pos = {}
@@ -206,70 +170,74 @@ class Sequences:
 		return "hello"
 
 
-class Types:
-	''' types return either True or False based on its functionality '''
-	def __init__(self):
-		pass
 
-	def is_odd(self,chac):
-		''' hello '''
-		if chac % 2 != 0:
-			return True
-		else: #pylint: disable=no-else-return
-			return False
+def is_odd(chac):
+	''' hello '''
+	is_odd = True
 
-	def is_even(self,chac):
-		''' haha '''
-		if chac % 2 != 0:
-			return False
-		else:	#pylint: disable=no-else-return
-			return True
+	if chac % 2 == 0:
+		is_even = False
 
-	def is_prime(self,chac):
-		''' will add later '''
+	return is_odd
+
+
+def is_even(chac):
+	''' haha '''
+	is_even = True
+
+	if chac % 2 != 0:
+		is_even = False
+
+	return is_even
+		
+
+def is_prime(chac):
+	''' will add later '''
+	is_prime = False
+	if chac > 1:
+		for i in range(2,chac):
+			if (chac % i) == 0:
+				is_prime = True
+				break
+	
+	if is_prime:
 		is_prime = False
-		if chac > 1:
-			for i in range(2,chac):
-				if (chac % i) == 0:
-					is_prime = True
-					break
-		if is_prime:
-			return False
-		else:	#pylint: disable=no-else-return
-			return True
 
+	return is_prime
 
-class listProp(Types):
-	''' -listProp Maintain A Balance Between Lists. It Manipulates Them .
+class Listprop:
+	''' -Listprop Maintain A Balance Between Lists. It Manipulates Them .
 		- It has Basic Properties of Doing Sum , Shaping a List 
 
 	'''
 	def __init__(self,lists):
 		self.lists = lists
-		if type(lists) == list:
+		if isinstance(self.lists, list):
 			print("bal")
 		else:
 			raise TypeError("Only List Objects Are Iterable")
 
 
-	def Sublist(self,shape):
+	def sub_list(self,shape):
 		''' This is doc '''
 		
 		mainlist = self.lists
 		shappedlist = [mainlist[i:i + shape ] for i in range(0, len(mainlist),shape )] 
 		return shappedlist
 
-	def summaker(self,devide=None,prime_state=None,even_state=None,odd_state=None): #pylint : disable=unused-argument
+
+	def sum_maker(self,devide=None,prime_state=None,even_state=None,odd_state=None):
 		
 		''' Man this is Annoying '''
 
 		if devide is not None:
-			lists = self.Sublist(devide)
+			lists = self.sub_list(devide)
 			emp = []
 			for lst in lists:
 				emp.append(sum(lst))
-			return emp
+			return_val = emp
 		else:
 			lists = self.lists
-			return sum(self.lists)
+			return_val = sum(self.lists)
 
+		return return_val
