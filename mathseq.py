@@ -18,10 +18,46 @@ used_math = math.sqrt(16)
 __all__=["Sequences","Listprop"]
 DEFINE = ''' Hello '''
 
+
+def is_odd(chac):
+	''' hello '''
+	is_odd = True
+
+	if chac % 2 == 0:
+		is_even = False
+
+	return is_odd
+
+
+def is_even(chac):
+	''' haha '''
+	is_even = True
+
+	if chac % 2 != 0:
+		is_even = False
+
+	return is_even
+		
+
+def is_prime(chac):
+	''' will add later '''
+	is_prime = False
+	if chac > 1:
+		for i in range(2,chac):
+			if (chac % i) == 0:
+				is_prime = True
+				break
+	
+	if is_prime:
+		is_prime = False
+
+	return is_prime
+
+
 class Sequences:
 	''' A class of 10 sequences that infinitely generate sequences ..'''
-	def __init__(self,inverse=False):
-		self.inverse = inverse
+	def __init__(self,inverse_val=False):
+		self.inverse = inverse_val
 
 
 	def composite_generator(self):
@@ -60,9 +96,10 @@ class Sequences:
 
 
 
-	def odd_seq(self,inverse=False):
+	def odd_seq(self,inverse=None):
 		''' This is a simple function that generates odd sequence of either 
 		    positive in infinite or negative '''
+		if inverse is None : inverse = self.inverse
 		if inverse is False:
 				n = 1
 				while True:
@@ -75,8 +112,9 @@ class Sequences:
 				n-=2
 
 
-	def even_seq(self,inverse=False):
+	def even_seq(self,inverse=None):
 		''' -even_seq generates infinite sequence of even number by following simple formula of "n+2" '''
+		if inverse is None : inverse = self.inverse
 		n = 0
 		if inverse is False:
 				while True:
@@ -92,16 +130,6 @@ class Sequences:
 		''' - Fibonacci is really a mysterious sequence !
 
 			- Following this simple logic of "fn = fn-1 + fn-2 " fibonacci is generated.
-				
-				x y r
-				-----
-				0 1 1
-				1 1 2
-				2 1 3
-				3 2 5
-				5 3 2
-
-			This is just a simple visualization of fibonacci number
 
 		'''
 
@@ -112,7 +140,7 @@ class Sequences:
 			yield x
 
 
-	def xibonacci(self,x,inverse=False):
+	def xibonacci(self,x,inverse=None):
 		''' X-ibonacci has no existance in real life. this is a basic function
 			That generates different sequence That follows the simple law of f = f(n.-n) 
 			It generates :
@@ -122,26 +150,28 @@ class Sequences:
 				- hexabonacci
 
 		 '''
+		if inverse is None : inverse = self.inverse
 		inp = int(x)
-		emp = []
+		empty_list = []
 		for _ in range(inp-1):
-			emp.append(0)
+			empty_list.append(0)
 		if inverse is False:
-			emp.append(1)
+			empty_list.append(1)
 		else:
-			emp.append(-1)
+			empty_list.append(-1)
 		while True:
-			x = emp[-inp:]
-			emp = emp[-inp:]
-			y = sum(emp)
-			yield emp[-1]
-			emp.append(y)
+			x = empty_list[-inp:]
+			empty_list = empty_list[-inp:]
+			y = sum(empty_list)
+			yield empty_list[-1]
+			empty_list.append(y)
 
 
-	def vaneck_seq(self,inverse=False):
+	def vaneck_seq(self,inverse=None):
 		''' -This Algorithm was taked from OEIS and the author is Ehsan Kia.. 
 
 		 '''
+		if inverse is None : inverse = self.inverse
 		if inverse is False:
 			try:
 				list_vanseq = [0]
@@ -167,43 +197,6 @@ class Sequences:
 				yield list_vanseq[-1]
 				i += 1
 
-		return "hello"
-
-
-
-def is_odd(chac):
-	''' hello '''
-	is_odd = True
-
-	if chac % 2 == 0:
-		is_even = False
-
-	return is_odd
-
-
-def is_even(chac):
-	''' haha '''
-	is_even = True
-
-	if chac % 2 != 0:
-		is_even = False
-
-	return is_even
-		
-
-def is_prime(chac):
-	''' will add later '''
-	is_prime = False
-	if chac > 1:
-		for i in range(2,chac):
-			if (chac % i) == 0:
-				is_prime = True
-				break
-	
-	if is_prime:
-		is_prime = False
-
-	return is_prime
 
 class Listprop:
 	''' -Listprop Maintain A Balance Between Lists. It Manipulates Them .
@@ -232,10 +225,10 @@ class Listprop:
 
 		if devide is not None:
 			lists = self.sub_list(devide)
-			emp = []
+			empty_list = []
 			for lst in lists:
-				emp.append(sum(lst))
-			return_val = emp
+				empty_list.append(sum(lst))
+			return_val = empty_list
 		else:
 			lists = self.lists
 			return_val = sum(self.lists)

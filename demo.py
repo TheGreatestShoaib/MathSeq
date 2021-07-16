@@ -2,20 +2,23 @@ from mathseq import *
 import sys
 
 
-type = Types()
+
 
 
 fib = Sequences()
-g = fib.composite_generator()   # give firt 1000 prime number
+g = fib.even_seq(inverse=False)
+k = fib.odd_seq()
 odd_list = []
-
+even_list = []
 
 for _ in range(100):
 	#odd_list.append(next(g))
 	odd_list.append(next(g))
+	even_list.append(next(k))
 
 
-print(odd_list)
+
+print(odd_list,even_list)
 
 #hello = list_prop("odd_list")
 '''
