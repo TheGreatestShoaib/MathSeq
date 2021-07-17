@@ -14,8 +14,11 @@ behind it in different ways '''
 import math
 
 used_math = math.sqrt(16)
+PHI = abs(( math.sqrt(5)+1)/2)
 
-__all__=["Sequences","Listprop","is_prime","is_odd","is_even"]
+
+
+__all__=["Sequences","Listprop","is_prime","is_odd","is_even","PHI"]
 DEFINE = ''' Hello '''
 
 

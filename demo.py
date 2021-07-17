@@ -1,8 +1,10 @@
 from mathseq import *
 import sys
+import math
 
+#PHI = abs(( math.sqrt(5)+1)/2)
 
-
+phi = PHI
 
 
 fib = Sequences(inverse_val=True)
@@ -21,7 +23,12 @@ for _ in range(100):
 #print(odd_list,even_list)
 
 
-print(even_list)
+#print(even_list)
+
+
+for i in range(1,10):
+	p = round(phi**i)
+	print(p)
 
 
 #hello = list_prop("odd_list")
