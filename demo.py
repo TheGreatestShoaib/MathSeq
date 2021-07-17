@@ -5,20 +5,24 @@ import sys
 
 
 
-fib = Sequences()
+fib = Sequences(inverse_val=True)
 g = fib.even_seq(inverse=False)
-k = fib.odd_seq()
+k = fib.lucas_number(inverse=False)
 odd_list = []
 even_list = []
 
 for _ in range(100):
 	#odd_list.append(next(g))
-	odd_list.append(next(g))
+	#dd_list.append(next(g))
 	even_list.append(next(k))
 
 
 
-print(odd_list,even_list)
+#print(odd_list,even_list)
+
+
+print(even_list)
+
 
 #hello = list_prop("odd_list")
 '''

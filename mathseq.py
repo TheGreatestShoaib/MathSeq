@@ -15,7 +15,7 @@ import math
 
 used_math = math.sqrt(16)
 
-__all__=["Sequences","Listprop"]
+__all__=["Sequences","Listprop","is_prime","is_odd","is_even"]
 DEFINE = ''' Hello '''
 
 
@@ -96,6 +96,8 @@ class Sequences:
 
 
 
+
+
 	def odd_seq(self,inverse=None):
 		''' This is a simple function that generates odd sequence of either 
 		    positive in infinite or negative '''
@@ -140,6 +142,7 @@ class Sequences:
 			yield x
 
 
+
 	def xibonacci(self,x,inverse=None):
 		''' X-ibonacci has no existance in real life. this is a basic function
 			That generates different sequence That follows the simple law of f = f(n.-n) 
@@ -165,6 +168,25 @@ class Sequences:
 			y = sum(empty_list)
 			yield empty_list[-1]
 			empty_list.append(y)
+
+
+
+	def lucas_number(self,inverse=None):
+		''' Lucas Number
+
+		'''
+		if inverse is None : inverse = self.inverse
+		if not inverse:
+			x ,y,r = 2,1,0
+		else:
+			x ,y,r = -2,-1,0
+		while True:
+			yield x
+			r = x+y
+			x = y
+			y = r
+
+
 
 
 	def vaneck_seq(self,inverse=None):
