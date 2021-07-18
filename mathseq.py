@@ -222,6 +222,18 @@ class Sequences:
 				yield list_vanseq[-1]
 				i += 1
 
+	def pronic_number(self,inverse=None):
+		''' Pronic Number Doc  '''
+		if inverse is None : inverse = self.inverse
+		increase , digit = 0 , 0
+		while True:
+			digit += increase
+			#print(digit)
+			yield digit
+			increase+=2
+			#print("v")
+
+
 
 class Listprop:
 	''' -Listprop Maintain A Balance Between Lists. It Manipulates Them .
