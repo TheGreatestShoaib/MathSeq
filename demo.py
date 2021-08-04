@@ -1,63 +1,25 @@
-from mathseq import *
+from mathseqs import Sequences , Listprop
+import mathseqs
 import sys
 import math
 
 #PHI = abs(( math.sqrt(5)+1)/2)
 
-phi = PHI
+#phi = PHI
 
 
-fib = Sequences(inverse_val=True)
-g = fib.even_seq(inverse=False)
-k = fib.lucas_number(inverse=False)
-odd_list = []
+luca = Sequences.lucas_number()
+
+lucas = []
 even_list = []
 
-for _ in range(100):
-	#odd_list.append(next(g))
-	#dd_list.append(next(g))
-	even_list.append(next(k))
+for _ in range(0,100):
+	lucas.append(next(luca))
 
+print(lucas)
 
-
-#print(odd_list,even_list)
-
-
-#print(even_list)
-
-
-for i in range(1,10):
-	p = round(phi**i)
-	print(p)
-
-
-#hello = list_prop("odd_list")
-'''
-
-for i in odd_list:
-	print(type.is_odd(i))
-	print(type.is_prime(i))
-	print(type.is_even(i))
-	print()
-
-'''
-
-
-
-
-
-
-
-
-
-
-
-
-
-#seq.clear()
-"""
-print(" prime :",t.is_prime(int(sys.argv[1])))
-print(" ODD  :",t.is_odd(int(sys.argv[1])))
-print(" Even :",t.is_even(int(sys.argv[1])))
-"""
-
+for l in lucas:
+	print(l)
+	print("prime : ",mathseqs.is_prime(l))
+	print("perfect :",mathseqs.is_perfect(l))
+	print("odd : ",mathseqs.is_odd(l))
