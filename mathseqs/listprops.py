@@ -1,5 +1,12 @@
 
 
+
+def dec_search(listed):
+	if listed is not None:
+		return listed
+
+
+
 class Listprop:
 	r'''
 	-Listprop Maintains A Balance Between Lists. It Manipulates Them .
@@ -9,14 +16,9 @@ class Listprop:
 	SORT_ALGOS = ["unique_sort","merge_sort","default"]
 	SEARCH_ALGOS = ["linear_search","binary_search"]
 
-
 	def __init__(self,lists):
 		self.lists = lists
-		self.info = {
-						"len" : len(self.lists),
-						"width" : False 
 
-					}
 		if isinstance(self.lists, list):
 			pass
 		else:
@@ -57,27 +59,34 @@ class Listprop:
 		for i in range(d):
 			pass
 
-	def searchlists(self,*argv,algo="linear"):
+	def linear_search(self,*argv):
 		''' it searches a list in various algo'''
-		matchs = {}
+		matches = {}
 		for index,value in enumerate(self.lists):
 			for arg in argv:
 				if value == arg:
-					print(f"matched {value} in index number {index}")
+					matches[index] = value
+
+		return map(dec_search,matches)
+
+
+	def binary_search(self):
+		pass
 
 
 
-	def sortlist(self,algo="insertion"):
+	def merge_sort(self):
 		''' sorts a list '''
+
+		pass
+
+	def selection_sort(self):
 
 		pass
 
 	def sumlist(self,devkey,op):
 		''' '''
 		
-
-
-
 
 		pass
 

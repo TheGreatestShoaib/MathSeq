@@ -1,12 +1,12 @@
 
-__all__ = ["is_odd","is_prime","is_even","is_perfect","get_factorials"]
+__all__ = ["is_odd","is_prime","is_even","is_perfect"]
 
 def is_odd(chac):
 	''' hello '''
 	is_odd = True
 
 	if chac % 2 == 0:
-		is_even = False
+		is_odd = False
 
 	return is_odd
 
@@ -46,12 +46,5 @@ def is_perfect(n):
 	else:
 		return False
 
-def get_factorials(number):
-	get_factorials.factorials = []
-	for factorial in range(1,number):
-		val = 1
-		val = factorial * val
-		get_factorials.factorials.append(factorial)
-		print(val)
-	pass
+
 

@@ -2,6 +2,8 @@
 doc goes here
 
 '''
+
+import math
 from mathseqs.listprops import Listprop
 from mathseqs.seq import Sequences
 from mathseqs.funcs import *
