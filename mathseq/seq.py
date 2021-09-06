@@ -133,6 +133,20 @@ class Sequences:
 			x = y
 			y = r
 
+	
+	def catalan_numbers():
+		res = 0
+		l = [1,1]
+		i = 0
+		while True:
+			yield l[i]
+			res = 0
+			for x in range(len(l)):
+				res += l[x] * l [-(x+1)] 
+			l.append(res)
+			i+=1
+
+	
 
 
 
