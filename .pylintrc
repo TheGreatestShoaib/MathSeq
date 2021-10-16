@@ -1,0 +1,11 @@
+
+[BASIC]
+
+good-names=i,j,k,l,x,y,m,n,a,r
+
+
+
+[MESSAGES CONTROL]
+# C0111: Missing docstring
+# R0904: Too many public methods
+disable= W0311,C0303
