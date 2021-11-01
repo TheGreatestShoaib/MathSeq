@@ -6,7 +6,7 @@ i'll just write it someday just yeah thats all
 
 
 
-def composite_generator():
+def composite_numbers():
 	'''
 	-It generates composite numbers which are just opposite of prime numbers,,
 	it means real numbers that
@@ -22,7 +22,7 @@ def composite_generator():
 		n+=1
 
 
-def prime_generator(end):
+def prime_numbers(end):
 	'''
 	- A number that is divisible only by itself and 1  (e.g. 2, 3, 5, 7, 11).
 
@@ -43,7 +43,7 @@ def prime_generator(end):
 
 
 
-def odd_seq(inverse=None):
+def odd_seq(inverse=False):
 	'''
 
 	This function generates odd sequence
@@ -62,7 +62,7 @@ def odd_seq(inverse=None):
 			n-=2
 
 
-def even_seq(inverse=None):
+def even_seq(inverse=False):
 	'''
 
 	- even_seq generates infinite sequence of even numbers
@@ -100,18 +100,18 @@ def fibonacci():
 		yield x
 
 
-def xibonacci(x,inverse=None):
+def xibonacci(x,inverse=False):
 	'''
 	- xibonacci isn't a real sequence rather it's just a method that generates
 	a sequence of number such that each term from the "x"
 	onward is the sum of previous "x" terms.
-	
+
 	similar as fibonacci that sums previous "x" terms.
 
 	-xibonacci usually requires one positional arguments that is the value of "x".
 
 	- possible sequences that could be generated through this method:
-			
+
 			- fibonacci
 			- tribonacci
 			- tetrabonacci
@@ -137,7 +137,7 @@ def xibonacci(x,inverse=None):
 
 
 
-def lucas_number(inverse=None):
+def lucas_number(inverse=False):
 	'''
 	- The Lucas sequence has the same recursive relationship as the "Fibonacci" sequence,
 	where each term is the sum of the two previous terms, but with different starting values
@@ -162,52 +162,54 @@ def catalan_numbers():
 	- In combinatorial mathematics,the Catalan numbers form a sequence of natural numbers
 	that occur in various counting problems,often involving recursively defined objects.
 
-	- Follows "n = 1/(n+1)(2n*n)" 
+	- Follows "n = 1/(n+1)(2n*n)"
 
 	"""
 	res = 0
-	l = [1,1]
+	catalan_list = [1,1]
 	i = 0
 	while True:
-		yield l[i]
+		yield catalan_list[i]
 		res = 0
-		for x in range(len(l)):
-			res += l[x] * l [-(x+1)]
-		l.append(res)
+		for x in range(len(catalan_list)):
+			res += catalan_list[x] * catalan_list [-(x+1)]
+		catalan_list.append(res)
 		i+=1
 
 
 
-def vaneck_seq(inverse=None):
+
+def vaneck_seq(inverse=False):
 	'''
 	-This Algorithm was taked from OEIS and the author is Ehsan Kia..
 
 	'''
-	if inverse is False:
-		try:
-			list_vanseq = [0]
-			last_pos = {}
-			i = 0
-			while True:
-				new_value = i - last_pos.get(list_vanseq[i], i)
-				list_vanseq.append(new_value)
-				last_pos[list_vanseq[i]] = i
-				yield new_value
-				i += 1
-		except KeyError:
-			pass
-	else:
+
+	try:
 		list_vanseq = [0]
 		last_pos = {}
 		i = 0
 		while True:
-			new_value = -abs(i - last_pos.get(list_vanseq[i], i))
+			new_value = i - last_pos.get(list_vanseq[i], i)
 			list_vanseq.append(new_value)
 			last_pos[list_vanseq[i]] = i
-			yield list_vanseq[-1]
+			yield new_value
 			i += 1
+	except KeyError:
+		pass
 
-def pronic_number():
+	# else:
+	# 	list_vanseq = [0]
+	# 	last_pos = {}
+	# 	i = 0
+	# 	while True:
+	# 		new_value = -abs(i - last_pos.get(list_vanseq[i], i))
+	# 		list_vanseq.append(new_value)
+	# 		last_pos[list_vanseq[i]] = i
+	# 		yield list_vanseq[-1]
+	# 		i += 1
+
+def pronic_numbers():
 	''' Pronic Number Doc  '''
 	increase , digit = 0 , 0
 	while True:
