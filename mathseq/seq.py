@@ -4,6 +4,7 @@ i'll just write it someday just yeah thats all
 """
 
 import time
+import random
 
 
 def composite_numbers():
@@ -217,10 +218,13 @@ def pronic_numbers():
 		yield digit
 		increase+=2
 
-def random_numbers(number_type="regular"):
+def random_numbers(number_type="regular",limits=1000,seed=None):
 	''' this is just a prototype'''
 
-	print(number_type)
+	while True:
+		#random.seed(10000000)
+		breh  = random.randint(0,10**4)
+		yield breh
 
 
 def looknsay(start_point="1",inverse=None):

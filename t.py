@@ -1,8 +1,10 @@
 from mathseq import seq
 
-import time
-breh = seq.looknsay()
+breh = seq.random_numbers()
 
-for b in range(5):
+
+
+
+
+for i in range(10):
 	print(next(breh))
-
