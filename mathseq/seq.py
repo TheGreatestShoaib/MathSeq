@@ -3,7 +3,7 @@ this is the doc string of this model
 i'll just write it someday just yeah thats all
 """
 
-
+import time
 
 
 def composite_numbers():
@@ -223,7 +223,32 @@ def random_numbers(number_type="regular"):
 	print(number_type)
 
 
-def look_and_say(inverse=None):
+def looknsay(start_point="1",inverse=None):
 	'''the doc goes here'''
+	start_point = str(start_point)
 
-	print(inverse)
+	def check_prev(word):
+		prev= word[0]
+		count= 1
+		say =  ''
+		for curr in word[1:]:
+			if curr == prev:
+				count += 1
+				continue
+			say += str(count) + prev
+			prev = curr
+			count = 1
+
+		breh = say + str(count) + prev
+		return breh
+	
+	recursed_val = check_prev(start_point)
+
+	if recursed_val == "11":
+		yield "1"
+
+	yield recursed_val
+	yield from looknsay(recursed_val)
+
+
+
