@@ -123,6 +123,29 @@ print("List of Catalan Numbers",cat_list)
 ```
 <br>
 
+**Sequences**
+<br>
+
+```python
+
+
+from mathseq import seq
+
+luca = seq.lucas_number()
+fibonacci = seq.fibonacci()
+prime = seq.prime_numbers(100)
+comp = seq.composite_numbers()
+odd =seq.odd_seq()
+even = seq.even_seq()
+odd_inv =seq.odd_seq(inverse=True)
+even_inv = seq.even_seq(inverse=True)
+cat = seq.catalan_numbers()
+van = seq.vaneck_seq()
+pronic = seq.pronic_numbers()
+xbo_six = seq.xibonacci(3)
+
+```
+<br>
 
 ## License
 
