@@ -146,6 +146,9 @@ def lucas_number(inverse=False):
 	- This produces a sequence where the ratios of successive terms approach the golden ratio,
 	and in fact the terms themselves are roundings("round()") of integer powers of the golden ratio.
 
+
+	- `x` and `y` are the constant starting_point for `Lucas Sequence`.
+
 	'''
 	if not inverse:
 		x,y,r = 2,1,0
@@ -199,19 +202,17 @@ def vaneck_seq(inverse=False):
 	except KeyError:
 		pass
 
-	# else:
-	# 	list_vanseq = [0]
-	# 	last_pos = {}
-	# 	i = 0
-	# 	while True:
-	# 		new_value = -abs(i - last_pos.get(list_vanseq[i], i))
-	# 		list_vanseq.append(new_value)
-	# 		last_pos[list_vanseq[i]] = i
-	# 		yield list_vanseq[-1]
-	# 		i += 1
-
 def pronic_numbers():
-	''' Pronic Number Doc  '''
+	'''
+	- A pronic number is a number which is the product of two consecutive integers,
+	that is, a number of the form n(n + 1).
+	
+	- Details:
+				* https://en.wikipedia.org/wiki/Pronic_number
+				* https://oeis.org/A002378
+
+	'''
+
 	increase , digit = 0 , 0
 	while True:
 		digit += increase
@@ -219,19 +220,41 @@ def pronic_numbers():
 		increase+=2
 
 def random_numbers(number_type="regular",limits=1000,seed=None):
-	''' this is just a prototype'''
+	'''
+	- Random Numbers Are Just Random Numbers As It Looks By Its Name,
 
+	- Use Seed For Controlling their Randomness,
+
+	- `Limits` Defines The Range.
+
+	'''
 	while True:
-		#random.seed(10000000)
+
+		if seed is not None:
+			random.seed(seed)
+
 		breh  = random.randint(0,10**4)
 		yield breh
 
 
-def looknsay(start_point="1",inverse=None):
-	'''the doc goes here'''
-	start_point = str(start_point)
+def looknsay(starting_point="1",inverse=None):
+	'''
+	- To generate a member of the sequence from the previous member, read off the digits of the previous member,
+	counting the number of digits in groups of the same digit. For example:
 
-	def check_prev(word):
+			- 1 is read off as "one 1" or 11.
+			- 11 is read off as "two 1s" or 21.
+			- 21 is read off as "one 2, then one 1" or 1211.
+			- 1211 is read off as "one 1, one 2, then two 1s" or 1112
+
+	
+	- The sequence grows indefinitely. In fact, any variant defined by
+	starting with a different integer seed number will (eventually) also grow indefinitely,
+
+	'''
+	starting_point = str(starting_point)
+
+	def count_next(word):
 		prev= word[0]
 		count= 1
 		say =  ''
@@ -246,13 +269,10 @@ def looknsay(start_point="1",inverse=None):
 		breh = say + str(count) + prev
 		return breh
 	
-	recursed_val = check_prev(start_point)
+	recursed_val = count_next(starting_point)
 
 	if recursed_val == "11":
 		yield "1"
 
 	yield recursed_val
 	yield from looknsay(recursed_val)
-
-
-

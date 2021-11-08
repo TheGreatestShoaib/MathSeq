@@ -6,7 +6,13 @@ here i'll put module docstring
 #__all__ = ["is_odd","is_prime","is_even","is_perfect"]
 
 def is_odd(chac):
-	''' hello '''
+	'''
+	- A whole number that is not able to be divided by two into
+	two equal whole numbers are called odd numbers 
+
+	- By Checking remainder of dividing two values odd numbers could be determined.
+
+	'''
 
 	if chac % 2 == 0:
 		return False
