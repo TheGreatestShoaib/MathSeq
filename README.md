@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://github.com/TheGreatestShoaib/TestReadme/blob/main/finalmathseqlogo.png" alt="logo">
+    <img src="https://github.com/TheGreatestShoaib/MathSeq/blob/master/logo/finalmathseqlogo.png" alt="logo">
     <br/>
     <img src="https://img.shields.io/github/license/TheGreatestShoaib/MathSeq?color=blue&style=flat-square" alt="license">
     <img src="https://img.shields.io/github/stars/TheGreatestShoaib/mathseq?style=flat-square" alt="GitHub Repo stars">
