@@ -14,7 +14,7 @@
 <h1> Mathseq </h1>
 <br/>
 
-<p>Mathseq is python library prototype that helps you generate inifinite sequences real quick ..</p>
+<p>Mathseq is python library that helps to generate inifinite sequences real quick ..</p>
 
 </div>
   
