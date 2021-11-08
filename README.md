@@ -8,13 +8,15 @@
     <img src="https://img.shields.io/pypi/v/mathseq?style=flat-square" alt="PyPI">
 </p>
 
-<center>
+
+
+<div align="center">
 <h1> Mathseq </h1>
 <br/>
 
 <p>Mathseq is python library prototype that helps you generate inifinite sequences real quick ..</p>
 
-</center>
+</div>
   
 ## Supported Sequences
 
